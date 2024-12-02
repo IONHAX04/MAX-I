@@ -1,7 +1,4 @@
-"use client";
-import { useState } from "react";
 import Titles from "./Titles/Titles";
-import Descriptions from "./Description/index";
 
 import "./styles.css";
 
@@ -27,11 +24,9 @@ const data = [
 ];
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(null);
   return (
     <div className="container">
-      <Titles data={data} setSelectedProject={setSelectedProject} />
-      <Descriptions data={data} selectedProject={selectedProject} />
+      <Titles data={data} />
     </div>
   );
 }

@@ -1,10 +1,4 @@
 import { useRef } from "react";
-import {
-  useScroll,
-  motion,
-  useTransform,
-  useMotionTemplate,
-} from "framer-motion";
 import PropTypes from "prop-types";
 
 import "./Titles.css";
@@ -36,16 +30,8 @@ Index.propTypes = {
 };
 
 function Title({ data, setSelectedProject }) {
-  const { title, speed, i } = data;
+  const { title, i } = data;
   const container = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", `${25 / speed}vw end`],
-  });
-
-  const clipProgress = useTransform(scrollYProgress, [0, 1], [100, 0]);
-  const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
 
   return (
     <div ref={container} className="title">
@@ -58,7 +44,6 @@ function Title({ data, setSelectedProject }) {
           setSelectedProject(null);
         }}
       >
-        <motion.p style={{ clipPath: clip }}>{title}</motion.p>
         <p>{title}</p>
       </div>
     </div>
