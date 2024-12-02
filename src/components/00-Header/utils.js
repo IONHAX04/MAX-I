@@ -1,22 +1,19 @@
-import { Bolt } from "lucide-react";
+import {
+  Bolt,
+  LayoutTemplate,
+  NotepadText,
+  SearchCheck,
+  Settings,
+  TableOfContents,
+} from "lucide-react";
 import { ShoppingBag } from "lucide-react";
 import { BellDot } from "lucide-react";
-// import { BookOpenText } from "lucide-react";
-// import { BriefcaseBusiness } from "lucide-react";
 import { CircleHelp } from "lucide-react";
-// import { TriangleAlert } from "lucide-react";
-// import { Users } from "lucide-react";
-// import { Lock } from "lucide-react";
-// import { Dessert } from "lucide-react";
-// import { ShieldPlus } from "lucide-react";
 import { MessageCircle } from "lucide-react";
 import { Images } from "lucide-react";
-// import { Figma } from "lucide-react";
 import { Play } from "lucide-react";
 import { MapPin } from "lucide-react";
 import { Database } from "lucide-react";
-import { PanelsTopLeft } from "lucide-react";
-import { PanelTop } from "lucide-react";
 
 export const Menus = [
   {
@@ -30,29 +27,29 @@ export const Menus = [
     subMenuHeading: ["SEO", "Enterprise", "Development"],
     subMenu: [
       {
-        name: "SEO",
-        desc: "Search Engine Optimisation",
-        icon: PanelsTopLeft,
+        name: "Search Engine Optimisation",
+        desc: "SEO",
+        icon: SearchCheck,
       },
       {
         name: "Content Marketing",
         desc: "Link pages",
-        icon: PanelTop,
+        icon: NotepadText,
       },
       {
         name: "Web Design",
         desc: "Development",
-        icon: Database,
+        icon: LayoutTemplate,
       },
       {
-        name: "SEM",
-        desc: "Search Engine Marketing",
-        icon: Bolt,
+        name: "Search Engine Marketing",
+        desc: "SEM",
+        icon: Settings,
       },
       {
         name: "Content Management",
         desc: "Link pages",
-        icon: PanelTop,
+        icon: TableOfContents,
       },
       {
         name: "Cross Platform",
@@ -60,8 +57,8 @@ export const Menus = [
         icon: Database,
       },
       {
-        name: "ASO",
-        desc: "App Store Optimization",
+        name: "App Store Optimization",
+        desc: "ASO",
         icon: Bolt,
       },
     ],

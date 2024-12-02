@@ -1,15 +1,16 @@
 import { Menus } from "./utils";
-import DesktopMenu from "../../pages/DesktopMenu";
-import MobMenu from "../../pages/MobMenu";
+import DesktopMenu from "../../pages/Projects/Menus/DesktopMenu";
+import MobMenu from "../../pages/Projects/Menus/MobMenu";
+
+import logo from "../../assets/logo/logo4.png";
 
 export default function Header() {
   return (
     <div>
-      <header className="h-16 text-[15px] fixed inset-0 flex-center bg-[#18181A] ">
-        <nav className=" px-3.5 flex-center-between w-full max-w-7xl mx-auto">
+      <header className="h-[75px] text-[15px] fixed inset-0 flex-center bg-[#18181A] ">
+        <nav className="px-3.5 flex-center-between items-center w-full max-w-7xl mx-auto">
           <div className="flex-center gap-x-3 z-[999] relative">
-            <img src="" alt="" className="size-8" />
-            <h3 className="text-lg font-semibold">Max - I</h3>
+            <img src={logo} alt="" className="h-[55px]" />
           </div>
 
           <ul className="gap-x-1 lg:flex-center hidden">
