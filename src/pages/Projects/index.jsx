@@ -13,7 +13,13 @@ const data = [
     speed: 0.67,
   },
   {
-    title: "DIGITAL SOLUTIONS",
+    title: "DIGITAL",
+    description:
+      "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
+    speed: 0.8,
+  },
+  {
+    title: "SOLUTIONS",
     description:
       "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
     speed: 0.8,

@@ -7,7 +7,10 @@ import logo from "../../assets/logo/logo4.png";
 export default function Header() {
   return (
     <div>
-      <header className="h-[75px] text-[15px] fixed inset-0 flex-center bg-[#18181A] ">
+      <header
+        className="h-[75px] text-[15px] fixed inset-0 flex-center bg-[#18181A]"
+        style={{ zIndex: "100" }}
+      >
         <nav className="px-3.5 flex-center-between items-center w-full max-w-7xl mx-auto">
           <div className="flex-center gap-x-3 z-[999] relative">
             <img src={logo} alt="" className="h-[55px]" />
