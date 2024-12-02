@@ -16,4 +16,7 @@ img {
   .main {
     margin-top: 40vh;
   }
+  .container .titles .title:first-child(1) {
+    font-size: 50px;
+  }
 }

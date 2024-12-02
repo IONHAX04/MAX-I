@@ -1,10 +1,8 @@
 .titles {
   width: 100%;
-  border-top: 1px solid rgba(183, 171, 152, 0.25);
 }
 
 .titles .title {
-  border-bottom: 1px solid rgba(183, 171, 152, 0.25);
   cursor: default;
   position: relative;
   text-align: center;

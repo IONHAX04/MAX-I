@@ -23,7 +23,10 @@ export default function Earth() {
   ]);
 
   return (
-    <div ref={scene} style={{ height: "100vh", width: "100%" }}>
+    <div
+      ref={scene}
+      style={{ height: "100vh", width: "100%", position: "fixed" }}
+    >
       <Canvas>
         <ambientLight intensity={0.1} />
         <directionalLight intensity={3.5} position={[1, 0, -0.25]} />

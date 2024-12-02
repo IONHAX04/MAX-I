@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import SmoothScroll from "../../pages/Projects/SmoothScroll/index";
 import Projects from "../../pages/Projects";
 
