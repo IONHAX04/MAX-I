@@ -17,6 +17,9 @@ export default function Home() {
         </Suspense>
         <Projects />
       </main>
+      <div className="h-[100vh]">
+        
+      </div>
     </SmoothScroll>
   );
 }

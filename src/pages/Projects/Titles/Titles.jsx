@@ -33,8 +33,10 @@ function Title({ data, setSelectedProject }) {
   const { title, i } = data;
   const container = useRef(null);
 
+  const titleClass = i === 0 ? "first" : "other";
+
   return (
-    <div ref={container} className="title">
+    <div ref={container} className={`title ${titleClass}`}>
       <div
         className="wrapper"
         onMouseOver={() => {

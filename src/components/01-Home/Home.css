@@ -1,8 +1,7 @@
 .main {
   height: 60vw;
-  background-color: #0f0f0f;
+  background-color: transparent;
   margin-top: 10vh;
-  margin-bottom: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -12,11 +11,46 @@ img {
   height: 100%;
 }
 
+.container .titles .title.other .wrapper p {
+  font-size: 50px;
+}
+
+.title.first .wrapper p {
+  color: #ffab0b;
+}
+
+.title.other .wrapper p {
+  color: white;
+}
+
+.container .titles .title .wrapper {
+  margin-bottom: -60px;
+}
+
 @media screen and (max-width: 768px) {
   .main {
     margin-top: 40vh;
+    margin-bottom: 50vh;
   }
   .container .titles .title:first-child(1) {
     font-size: 50px;
+    color: #ffab0b;
+  }
+  .titles {
+    margin-top: 0;
+  }
+  .container .titles .title .wrapper {
+    margin-bottom: 10px;
+  }
+  .container .titles .title .wrapper p {
+    font-size: 60px;
+    gap: 10;
+  }
+  .title.first {
+    font-size: 40px;
+  }
+
+  .container .titles .title.other .wrapper p {
+    font-size: 40px;
   }
 }
