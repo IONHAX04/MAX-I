@@ -13,22 +13,27 @@ const worksData = [
   {
     image: workslogo,
     title: "Logo Designs",
+    route: "/logo-designs",
   },
   {
     image: worksweb,
     title: "Web Designs",
+    route: "/web-design",
   },
   {
     image: worksposter,
     title: "Print Posters",
+    route: "/posters",
   },
   {
     image: workssocial,
     title: "Social Media Posters",
+    route: "/social-posters",
   },
   {
     image: worksvideo,
     title: "Videos",
+    route: "/videos",
   },
 ];
 

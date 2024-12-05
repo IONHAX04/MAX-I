@@ -3,52 +3,55 @@ import PropTypes from "prop-types";
 
 import workimg from "../../assets/common/service.jpg";
 
-import workslogo from "../../assets/works/WORKSLOGO.png";
-import worksposter from "../../assets/works/WORKSPOSTER.png";
-import workssocial from "../../assets/works/WORKSSOCIAL.png";
-import worksvideo from "../../assets/works/WORKSVIDEO.png";
-import worksweb from "../../assets/works/WORKSWEB.png";
+import app from "../../assets/servicess/APP.jpg";
+import brandmgmt from "../../assets/servicess/BRANDMANAGEMENT.jpg";
+import contentmarket from "../../assets/servicess/CONTENTMARKETING.jpg";
+import sem from "../../assets/servicess/SEM.jpg";
+import seo from "../../assets/servicess/SEO.jpg";
+import socialmgmt from "../../assets/servicess/SOCIALMANAGEMENT.jpg";
+import socialmediaads from "../../assets/servicess/SOCIALMEDIAAD.jpg";
+import web from "../../assets/servicess/WEB.jpg";
 
 const worksData = [
   {
-    image: workslogo,
+    image: seo,
     title: "Search Engine Optimization",
     route: "/seo",
   },
   {
-    image: worksweb,
+    image: contentmarket,
     title: "Content Marketing",
     route: "/content-marketing",
   },
   {
-    image: worksposter,
+    image: app,
     title: "App Store Optimization",
     route: "/app-store-optimization",
   },
   {
-    image: workssocial,
+    image: sem,
     title: "Search Engine Marketing",
     route: "/search-engine-marketing",
   },
   {
-    image: worksvideo,
+    image: socialmediaads,
     title: "Social Media Advertising",
     route: "/social-media-advertising",
   },
   {
-    image: worksposter,
+    image: brandmgmt,
     title: "Brand Management",
-    route: "brand-management",
+    route: "/brand-management",
   },
   {
-    image: workssocial,
+    image: web,
     title: "Website Design & Development",
-    route: "web-dev",
+    route: "/web-dev",
   },
   {
-    image: worksvideo,
+    image: socialmgmt,
     title: "Social Media Management",
-    route: "social-media-management",
+    route: "/social-media-management",
   },
 ];
 

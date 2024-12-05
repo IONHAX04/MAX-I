@@ -1,5 +1,5 @@
 .main {
-  height: 60vw;
+  height: 65vw;
   background-color: transparent;
   margin-top: 10vh;
   position: relative;
@@ -33,8 +33,8 @@ img {
 
 @media screen and (max-width: 768px) {
   .main {
-    margin-top: 40vh;
-    margin-bottom: 50vh;
+    margin-top: 35vh;
+    margin-bottom: 65vh;
   }
   .container .titles .title:first-child(1) {
     font-size: 50px;
