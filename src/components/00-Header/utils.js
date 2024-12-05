@@ -110,10 +110,10 @@ export const Menus = [
     ],
     gridCols: 3,
   },
-  {
-    name: "Blogs",
-    route: "/blogs",
-  },
+  // {
+  //   name: "Blogs",
+  //   route: "/blogs",
+  // },
   {
     name: "Contact Us",
     route: "/contact",

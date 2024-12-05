@@ -1,30 +1,34 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { FiArrowRight, FiMail, FiMapPin } from "react-icons/fi";
 import { SiGithub, SiTiktok, SiYoutube } from "react-icons/si";
 import { FaXTwitter } from "react-icons/fa6";
 
+import PropTypes from "prop-types";
+
+import contact from "../../assets/common/contact.jpg";
+
 export default function Contact() {
   return (
-    <div className="min-h-screen bg-zinc-900 px-4 py-12 text-zinc-50">
-      <Logo />
-      <motion.div
-        initial="initial"
-        animate="animate"
-        transition={{
-          staggerChildren: 0.05,
-        }}
-        className="mx-auto grid max-w-4xl grid-flow-dense grid-cols-12 gap-4"
-      >
-        <HeaderBlock />
-        <SocialsBlock />
-        <AboutBlock />
-        <LocationBlock />
-        <EmailListBlock />
-      </motion.div>
-      <Footer />
-    </div>
+    <>
+      <img src={contact} alt="" />
+      <div className="min-h-screen bg-zinc-900 px-4 py-12 text-zinc-50">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          transition={{
+            staggerChildren: 0.05,
+          }}
+          className="mx-auto grid max-w-2xl grid-flow-dense grid-cols-12 gap-4"
+        >
+          <HeaderBlock />
+          <SocialsBlock />
+          <AboutBlock />
+          <LocationBlock />
+          <EmailListBlock />
+        </motion.div>
+      </div>
+    </>
   );
 }
 
@@ -183,38 +187,7 @@ const EmailListBlock = () => (
   </Block>
 );
 
-const Logo = () => {
-  // Temp logo from https://logoipsum.com/
-  return (
-    <svg
-      width="40"
-      height="auto"
-      viewBox="0 0 50 39"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="mx-auto mb-12 fill-zinc-50"
-    >
-      <path
-        d="M16.4992 2H37.5808L22.0816 24.9729H1L16.4992 2Z"
-        stopColor="#000000"
-      ></path>
-      <path
-        d="M17.4224 27.102L11.4192 36H33.5008L49 13.0271H32.7024L23.2064 27.102H17.4224Z"
-        stopColor="#000000"
-      ></path>
-    </svg>
-  );
-};
-
-const Footer = () => {
-  return (
-    <footer className="mt-12">
-      <p className="text-center text-zinc-400">
-        Made with ❤️ by{" "}
-        <a href="#" className="text-red-300 hover:underline">
-          @tomisloading
-        </a>
-      </p>
-    </footer>
-  );
+Block.propTypes = {
+  className: PropTypes.string, // className should be a string
+  children: PropTypes.node.isRequired, // children should be a React node and is required
 };

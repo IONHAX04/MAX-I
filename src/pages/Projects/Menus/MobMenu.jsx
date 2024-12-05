@@ -20,21 +20,37 @@ MobMenu.propTypes = {
 };
 
 export default function MobMenu({ Menus }) {
-  console.log("Menus", Menus);
   const [isOpen, setIsOpen] = useState(false);
-  const [clicked, setClicked] = useState(null);
+  const [clicked, setClicked] = useState(null); // Track open dropdown index
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
-    setClicked(null);
+    setClicked(null); // Close any open dropdown when closing the menu
   };
 
   const navigate = useNavigate();
 
+  // Function to navigate to the route
   const onNavigate = (path) => {
-    console.log("path", path);
     navigate(path);
-    setIsOpen(false);
-    window.scrollTo(0, 0);
+    setIsOpen(false); // Close the menu after navigation
+    window.scrollTo(0, 0); // Scroll to top
+  };
+
+  // Function to handle the click on menu items (titles)
+  const handleMenuClick = (i, hasSubMenu, route, e) => {
+    if (!hasSubMenu) {
+      // If there is no submenu, navigate to the route
+      onNavigate(route);
+    }
+    // If there's a submenu, prevent navigation and just toggle dropdown
+    e.stopPropagation();
+  };
+
+  // Function to handle dropdown arrow click
+  const handleArrowClick = (i, e) => {
+    // Prevent the arrow click from triggering the menu click
+    e.stopPropagation();
+    setClicked((prevClicked) => (prevClicked === i ? null : i)); // Toggle dropdown
   };
 
   const subMenuDrawer = {
@@ -61,21 +77,25 @@ export default function MobMenu({ Menus }) {
       >
         <ul>
           {Menus.map(({ name, subMenu, route }, i) => {
-            const isClicked = clicked === i;
-            const hasSubMenu = subMenu?.length;
+            const isClicked = clicked === i; // Track if dropdown is open
+            const hasSubMenu = subMenu?.length; // Check if there is a sub-menu
             return (
               <li key={name} className="">
                 <span
                   className="flex-center-between p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
-                  onClick={() => onNavigate(route)}
+                  onClick={(e) => handleMenuClick(i, hasSubMenu, route, e)} // Handle menu click
                 >
                   {name}
                   {hasSubMenu && (
                     <ChevronDown
-                      className={`ml-auto ${isClicked && "rotate-180"} `}
+                      className={`ml-auto transition-transform duration-300 ${
+                        isClicked ? "rotate-180" : ""
+                      }`}
+                      onClick={(e) => handleArrowClick(i, e)} // Handle dropdown arrow click
                     />
                   )}
                 </span>
+
                 {hasSubMenu && (
                   <motion.ul
                     initial="exit"
@@ -83,10 +103,10 @@ export default function MobMenu({ Menus }) {
                     variants={subMenuDrawer}
                     className="ml-5"
                   >
-                    {subMenu.map(({ name, icon: Icon, route: route }) => (
+                    {subMenu.map(({ name, icon: Icon, route }) => (
                       <li
                         key={name}
-                        onClick={() => onNavigate(route)}
+                        onClick={() => onNavigate(route)} // Navigate on sub-menu click
                         className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
                       >
                         <Icon size={17} />

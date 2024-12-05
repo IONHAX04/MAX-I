@@ -22,12 +22,12 @@ export default function Header() {
             ))}
           </ul>
           <div className="flex-center gap-x-5">
-            <button
+            {/* <button
               aria-label="sign-in"
               className="bg-white/5 z-[999] relative px-3 py-1.5 shadow rounded-xl flex-center"
             >
               Let's Talk
-            </button>
+            </button> */}
             <div className="lg:hidden">
               <MobMenu Menus={Menus} />
             </div>

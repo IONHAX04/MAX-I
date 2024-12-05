@@ -106,7 +106,11 @@ export default function Footer() {
           <div className="border-t border-slate-200 bg-[#2d2d2d] py-4 text-sm">
             <div className="container px-6">
               <div className="grid grid-cols-5 items-center gap-6">
-                <img src={logo} alt="" className="w-[20vh] h-[6.2vh]" />
+                <img
+                  src={logo}
+                  alt=""
+                  className="lg:w-[8vh] w-[20vh] h-[6.2vh]"
+                />
               </div>
             </div>
           </div>
