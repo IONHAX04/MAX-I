@@ -8,6 +8,7 @@ import worksposter from "../../assets/works/WORKSPOSTER.png";
 import workssocial from "../../assets/works/WORKSSOCIAL.png";
 import worksvideo from "../../assets/works/WORKSVIDEO.png";
 import worksweb from "../../assets/works/WORKSWEB.png";
+import { useNavigate } from "react-router-dom";
 
 const worksData = [
   {
@@ -38,6 +39,14 @@ const worksData = [
 ];
 
 export default function Works() {
+  const navigate = useNavigate();
+
+  const onNavigate = (path) => {
+    console.log("path", path);
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="sm:p-6 md:p-8 mt-[10vh] bg-white">
       <div>
@@ -48,6 +57,7 @@ export default function Works() {
           {worksData.map((work, index) => (
             <BounceCard
               key={index}
+              onClick={() => onNavigate(work.route)}
               className="col-span-12 lg:col-span-4 md:col-span-4 hover:bg-[#ffffff] transition duration-100 bg-opacity-10"
             >
               <CardTitle>
@@ -69,10 +79,11 @@ export default function Works() {
   );
 }
 
-const BounceCard = ({ className, children }) => {
+const BounceCard = ({ className, children, onClick }) => {
   return (
     <motion.div
       whileHover={{ scale: 0.95, rotate: "-1deg" }}
+      onClick={onClick}
       className={`group relative min-h-[300px] cursor-pointer overflow-hidden rounded-2xl bg-slate-100 p-8 ${className}`}
     >
       {children}
@@ -99,6 +110,7 @@ Works.propTypes = {
 BounceCard.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  onClick: PropTypes.func, // Add PropTypes for onClick
 };
 
 CardTitle.propTypes = {

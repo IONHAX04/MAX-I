@@ -11,6 +11,7 @@ import seo from "../../assets/servicess/SEO.jpg";
 import socialmgmt from "../../assets/servicess/SOCIALMANAGEMENT.jpg";
 import socialmediaads from "../../assets/servicess/SOCIALMEDIAAD.jpg";
 import web from "../../assets/servicess/WEB.jpg";
+import { useNavigate } from "react-router-dom";
 
 const worksData = [
   {
@@ -56,6 +57,14 @@ const worksData = [
 ];
 
 export default function Services() {
+  const navigate = useNavigate();
+
+  const onNavigate = (path) => {
+    console.log("path", path);
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className="sm:p-6 md:p-8 mt-[10vh] bg-white">
       <div>
@@ -66,6 +75,7 @@ export default function Services() {
           {worksData.map((work, index) => (
             <BounceCard
               key={index}
+              onClick={() => onNavigate(work.route)}
               className="col-span-12 lg:col-span-4 md:col-span-4 hover:bg-[#ffffff] transition duration-100 bg-opacity-10"
             >
               <CardTitle>
@@ -87,10 +97,11 @@ export default function Services() {
   );
 }
 
-const BounceCard = ({ className, children }) => {
+const BounceCard = ({ className, children, onClick }) => {
   return (
     <motion.div
       whileHover={{ scale: 0.95, rotate: "-1deg" }}
+      onClick={onClick}
       className={`group relative min-h-[300px] cursor-pointer overflow-hidden rounded-2xl bg-slate-100 p-8 ${className}`}
     >
       {children}
@@ -117,6 +128,7 @@ Services.propTypes = {
 BounceCard.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
+  onClick: PropTypes.func, // Add PropTypes for onClick
 };
 
 CardTitle.propTypes = {
