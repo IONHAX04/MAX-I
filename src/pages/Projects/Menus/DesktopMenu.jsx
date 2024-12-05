@@ -4,10 +4,20 @@ import { motion } from "framer-motion";
 
 import PropTypes from "prop-types";
 
+import { useNavigate } from "react-router-dom";
+
 export default function DesktopMenu({ menu }) {
   const [isHover, toggleHover] = useState(false);
   const toggleHoverMenu = () => {
     toggleHover(!isHover);
+  };
+
+  const navigate = useNavigate();
+
+  const onNavigate = (path) => {
+    console.log("path", path);
+    navigate(path);
+    window.scrollTo(0, 0);
   };
 
   const subMenuAnimate = {
@@ -42,7 +52,10 @@ export default function DesktopMenu({ menu }) {
       onHoverEnd={toggleHoverMenu}
       key={menu.name}
     >
-      <span className="flex-center gap-1 hover:bg-white/5 cursor-pointer px-3 py-1 rounded-xl">
+      <span
+        className="flex-center gap-1 hover:bg-white/5 cursor-pointer px-3 py-1 rounded-xl"
+        onClick={() => onNavigate(menu.route)}
+      >
         {menu.name}
         {hasSubMenu && (
           <ChevronDown className="mt-[0.6px] group-hover/link:rotate-180 duration-200" />
@@ -66,7 +79,11 @@ export default function DesktopMenu({ menu }) {
           >
             {hasSubMenu &&
               menu.subMenu.map((submenu, i) => (
-                <div className="relative cursor-pointer" key={i}>
+                <div
+                  className="relative cursor-pointer"
+                  key={i}
+                  onClick={() => onNavigate(submenu.route)}
+                >
                   {menu.gridCols > 1 && menu?.subMenuHeading?.[i] && (
                     <p className="text-sm mb-4 text-gray-500">
                       {menu?.subMenuHeading?.[i]}
@@ -77,7 +94,7 @@ export default function DesktopMenu({ menu }) {
                       {submenu.icon && <submenu.icon />}
                     </div>
                     <div>
-                      <h6 className="font-semibold group-hover/menubox:text-[#ffab0b] group-hover/menubox:text-gray-900 duration-300">
+                      <h6 className="font-semibold group-hover/menubox:text-[#ffab0b] duration-300">
                         {submenu.name}
                       </h6>
                       <p className="text-sm text-gray-400">{submenu.desc}</p>
@@ -95,6 +112,7 @@ export default function DesktopMenu({ menu }) {
 DesktopMenu.propTypes = {
   menu: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    route: PropTypes.string,
     subMenu: PropTypes.arrayOf(
       PropTypes.shape({
         icon: PropTypes.elementType,

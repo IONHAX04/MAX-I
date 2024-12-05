@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
 
 MobMenu.propTypes = {
   Menus: PropTypes.arrayOf(
@@ -19,11 +20,21 @@ MobMenu.propTypes = {
 };
 
 export default function MobMenu({ Menus }) {
+  console.log("Menus", Menus);
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState(null);
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
     setClicked(null);
+  };
+
+  const navigate = useNavigate();
+
+  const onNavigate = (path) => {
+    console.log("path", path);
+    navigate(path);
+    setIsOpen(false);
+    window.scrollTo(0, 0);
   };
 
   const subMenuDrawer = {
@@ -49,14 +60,14 @@ export default function MobMenu({ Menus }) {
         animate={{ x: isOpen ? "0%" : "-100%" }}
       >
         <ul>
-          {Menus.map(({ name, subMenu }, i) => {
+          {Menus.map(({ name, subMenu, route }, i) => {
             const isClicked = clicked === i;
             const hasSubMenu = subMenu?.length;
             return (
               <li key={name} className="">
                 <span
                   className="flex-center-between p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
-                  onClick={() => setClicked(isClicked ? null : i)}
+                  onClick={() => onNavigate(route)}
                 >
                   {name}
                   {hasSubMenu && (
@@ -72,9 +83,10 @@ export default function MobMenu({ Menus }) {
                     variants={subMenuDrawer}
                     className="ml-5"
                   >
-                    {subMenu.map(({ name, icon: Icon }) => (
+                    {subMenu.map(({ name, icon: Icon, route: route }) => (
                       <li
                         key={name}
+                        onClick={() => onNavigate(route)}
                         className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
                       >
                         <Icon size={17} />

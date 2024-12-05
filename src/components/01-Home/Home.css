@@ -27,6 +27,10 @@ img {
   margin-bottom: -60px;
 }
 
+.welcomeContents {
+  margin-top: -40vh;
+}
+
 @media screen and (max-width: 768px) {
   .main {
     margin-top: 40vh;
@@ -46,11 +50,55 @@ img {
     font-size: 60px;
     gap: 10;
   }
+
   .title.first {
     font-size: 40px;
   }
 
   .container .titles .title.other .wrapper p {
-    font-size: 40px;
+    font-size: 30px;
   }
+
+  .welcomeContents {
+    margin-top: 40vh;
+  }
+}
+
+/* WHAT WE DO */
+.welcomeContents {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding: 450px 10px; */
+  /* background-image: url("../../assets/home/bg2.svg"); */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+  .welcomeContents {
+    background-attachment: scroll;
+  }
+}
+
+.welcomeContents::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.welcomeContents > * {
+  position: relative;
+  z-index: 2;
 }

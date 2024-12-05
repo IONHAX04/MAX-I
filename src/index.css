@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Raleway", sans-serif;
+}
+
 body {
   @apply bg-[#111] text-gray-300 font-inter;
 }
