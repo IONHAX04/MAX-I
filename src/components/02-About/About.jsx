@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Glide from "@glidejs/glide";
 import logo from "../../assets/about/about.jpg";
 
@@ -6,6 +6,7 @@ import vision from "../../assets/about/about1.jpg";
 import mission from "../../assets/about/about2.jpg";
 
 import about from "../../assets/common/about.jpg";
+import mobAbout from "../../assets/mobile/ABOUT.jpg";
 
 import img1 from "../../assets/about/logo1.png";
 import img2 from "../../assets/about/logo2.png";
@@ -18,6 +19,30 @@ import img8 from "../../assets/about/logo8.png";
 import SmoothScroll from "../../pages/Projects/SmoothScroll";
 
 export default function About() {
+  const [deviceType, setDeviceType] = useState("lg");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setDeviceType("lg");
+      } else if (window.innerWidth >= 768) {
+        setDeviceType("md");
+      } else {
+        setDeviceType("sm");
+      }
+    };
+
+    // Initialize on mount
+    handleResize();
+
+    // Listen for window resize
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     const slider = new Glide(".glide-09", {
       type: "carousel",
@@ -49,7 +74,11 @@ export default function About() {
   return (
     <SmoothScroll>
       <div>
-        <img className="mt-20" src={about} alt="" />
+        <img
+          className="mt-20"
+          src={deviceType === "sm" ? mobAbout : about}
+          alt=""
+        />
         <div className="flex flex-col items-center justify-center bg-white">
           <section className="flex lg:flex-row flex-col w-full md:h-screen px-8 py-12 items-center gap-10 max-w-7xl mx-auto">
             <div className="image lg:w-[150%] w-[100%]">

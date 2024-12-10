@@ -1,14 +1,45 @@
 import contact from "../../assets/common/contact.jpg";
 import { useNavigate } from "react-router-dom";
 
+import mobContact from "../../assets/mobile/CONTACT.jpg";
+
 import "./Contact.css";
+import { useEffect, useState } from "react";
 
 export default function Contact() {
   const navigate = useNavigate();
 
+  const [deviceType, setDeviceType] = useState("lg");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setDeviceType("lg");
+      } else if (window.innerWidth >= 768) {
+        setDeviceType("md");
+      } else {
+        setDeviceType("sm");
+      }
+    };
+
+    // Initialize on mount
+    handleResize();
+
+    // Listen for window resize
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
-      <img src={contact} alt="" />
+      <img
+        className="mt-20"
+        src={deviceType === "sm" ? mobContact : contact}
+        alt=""
+      />
       <div className="bg-white">
         <div className="w-[100%]" align="center">
           <h1

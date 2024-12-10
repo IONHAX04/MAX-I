@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
 import workimg from "../../assets/common/works.jpg";
+import mobImg from "../../assets/mobile/WORKS.jpg";
 
 import workslogo from "../../assets/works/WORKSLOGO.png";
 import worksposter from "../../assets/works/WORKSPOSTER.png";
@@ -9,6 +10,7 @@ import workssocial from "../../assets/works/WORKSSOCIAL.png";
 import worksvideo from "../../assets/works/WORKSVIDEO.png";
 import worksweb from "../../assets/works/WORKSWEB.png";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const worksData = [
   {
@@ -41,6 +43,30 @@ const worksData = [
 export default function Works() {
   const navigate = useNavigate();
 
+  const [deviceType, setDeviceType] = useState("lg");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setDeviceType("lg");
+      } else if (window.innerWidth >= 768) {
+        setDeviceType("md");
+      } else {
+        setDeviceType("sm");
+      }
+    };
+
+    // Initialize on mount
+    handleResize();
+
+    // Listen for window resize
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const onNavigate = (path) => {
     console.log("path", path);
     navigate(path);
@@ -50,7 +76,11 @@ export default function Works() {
   return (
     <div className="sm:p-6 md:p-8 mt-[10vh] bg-white">
       <div>
-        <img src={workimg} alt="Header" />
+        <img
+          className="mt-20"
+          src={deviceType === "sm" ? mobImg : workimg}
+          alt="Header"
+        />
       </div>
       <section className="mx-auto max-w-7xl px-4 py-12 text-slate-800">
         <div className="grid grid-cols-12 gap-4">
