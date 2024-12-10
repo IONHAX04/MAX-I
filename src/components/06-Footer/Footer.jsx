@@ -98,17 +98,17 @@ export default function Footer() {
           </div>
           <div
             className={`mt-4 cursor-pointer font-semibold ${
-              isActive("/aboutus") ? "text-[#ffaa14]" : "text-[#fff]"
+              isActive("/about") ? "text-[#ffaa14]" : "text-[#fff]"
             } hover:text-[#ffaa14]`}
-            onClick={() => navigate("/aboutus")}
+            onClick={() => navigate("/about")}
           >
             <i className="fa-solid fa-chevron-right"></i>&nbsp;&nbsp; About
           </div>
           <div
             className={`mt-4 cursor-pointer font-semibold ${
-              isActive("/services") ? "text-[#ffaa14]" : "text-[#fff]"
+              isActive("/service") ? "text-[#ffaa14]" : "text-[#fff]"
             } hover:text-[#ffaa14]`}
-            onClick={() => navigate("/services")}
+            onClick={() => navigate("/service")}
           >
             <i className="fa-solid fa-chevron-right"></i>&nbsp;&nbsp; Services
           </div>
