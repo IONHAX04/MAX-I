@@ -1,10 +1,36 @@
 import seo from "../../assets/servicess/CONTENTMARKETING.jpg";
 import service from "../../assets/common/service.jpg";
+import mobImg from "../../assets/mobile/SERVICE.jpg";
+import { useEffect, useState } from "react";
 
 export default function ContentMarketing() {
+  const [deviceType, setDeviceType] = useState("lg");
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setDeviceType("lg");
+      } else if (window.innerWidth >= 768) {
+        setDeviceType("md");
+      } else {
+        setDeviceType("sm");
+      }
+    };
+
+    // Initialize on mount
+    handleResize();
+
+    // Listen for window resize
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div>
-      <img src={service} alt="" />
+      <img src={deviceType === "sm" ? mobImg : service} alt="Header" />
       <div className="restaurantContents bg-white w-full md:w-10/12 mx-auto">
         <section className="flex lg:flex-row flex-col w-full md:h-screen px-8 py-12 items-center gap-10 max-w-6xl mx-auto">
           <div className="image lg:w-[150%] w-[100%]">
