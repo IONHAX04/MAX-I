@@ -172,7 +172,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="visionMissionContents bg-white lg:h-screen">
+        <div className="visionMissionContents bg-white">
           <section className="flex lg:flex-row flex-col w-full md:h-screen px-8 py-12 items-center gap-10 max-w-5xl mx-auto">
             <div className="image hidden lg:block">
               <img src={vision} alt="" />
