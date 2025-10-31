@@ -5,6 +5,7 @@ import movenpack from "../../assets/works/web/movenpack.jpg";
 import movenpackfull from "../../assets/works/web/movenpackfull.png";
 import ublisyoga from "../../assets/works/web/ublisyoga.jpg";
 import ublisyogafull from "../../assets/works/web/ublisyogafull.png";
+import { Helmet } from "react-helmet";
 
 export default function WebsiteDesign() {
   const [modalImage, setModalImage] = useState(null); // State to store the selected image for the modal
@@ -47,6 +48,17 @@ export default function WebsiteDesign() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Web Design Services in India – Creative & Responsive Websites</title>
+  <meta
+    name="description"
+    content="Max-iDigital delivers professional web design services in India creating visually striking, mobile-responsive websites that reflect your brand, engage visitors and convert. From UI/UX to CMS builds, we craft online experiences that drive growth."
+  />
+  <meta
+    name="keywords"
+    content="web design India, responsive web design, creative website design, UI/UX design, CMS website design, professional web design, Max-iDigital, website development, online branding"
+  />
+</Helmet>
       <img src={image} alt="" />
       <div className="w-[100%] bg-white" align="center">
         <div className="py-20 w-[90%]">

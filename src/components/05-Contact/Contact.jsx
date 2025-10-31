@@ -1,5 +1,6 @@
 import contact from "../../assets/common/contact.jpg";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import mobContact from "../../assets/mobile/CONTACT.jpg";
 
@@ -35,6 +36,17 @@ export default function Contact() {
 
   return (
     <>
+    <Helmet>
+  <title>Max-iDigital | Contact Us – Digital Marketing Agency in India</title>
+  <meta
+    name="description"
+    content="Get in touch with Max-iDigital, India’s full-service digital marketing agency. Whether you need SEO, content, PPC or social media management—our team is ready to help. Let’s elevate your brand and drive growth together."
+  />
+  <meta
+    name="keywords"
+    content="contact Max-iDigital, digital marketing agency India, SEO services, PPC management, social media marketing, content marketing, online marketing, business growth"
+  />
+</Helmet>
       <img
         className="mt-20"
         src={deviceType === "sm" ? mobContact : contact}

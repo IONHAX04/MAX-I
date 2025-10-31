@@ -1,6 +1,8 @@
 import seo from "../../assets/servicess/SEO.jpg";
 import service from "../../assets/common/service.jpg";
 import mobWork from "../../assets/mobile/SERVICE.jpg";
+import { Helmet } from "react-helmet";
+
 
 import { useEffect, useState } from "react";
 
@@ -31,6 +33,18 @@ export default function SEO() {
 
   return (
     <div>
+    <Helmet>
+  <title>Max-iDigital | Professional SEO Services in India – Boost Your Organic Growth</title>
+  <meta
+    name="description"
+    content="Max-iDigital offers expert SEO services in India - including technical SEO audits, on-page & off-page optimization, keyword strategy and local & national ranking support. Drive targeted traffic and measurable growth for your business."
+  />
+  <meta
+    name="keywords"
+    content="SEO services India, professional SEO, technical SEO audits, on-page optimization, off-page optimization, keyword strategy, local SEO, national SEO, Max-iDigital, search engine optimization"
+  />
+</Helmet>
+
       <img src={deviceType === "sm" ? mobWork : service} alt="Header" />
       <div className="restaurantContents bg-white w-full md:w-10/12 mx-auto">
         <section className="flex lg:flex-row flex-col w-full md:h-screen px-8 py-12 items-center gap-10 max-w-6xl mx-auto">

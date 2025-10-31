@@ -3,6 +3,7 @@ import image from "../../assets/works-banner/WEB-BANNERS-PRINT.jpg";
 
 import chillax from "../../assets/works/poster/chillax.png";
 import dubaijwellery from "../../assets/works/poster/DubaiJewellery.jpg";
+import { Helmet } from "react-helmet";
 
 export default function Posters() {
   const [modalImage, setModalImage] = useState(null); // State to store the selected image for the modal
@@ -36,6 +37,17 @@ export default function Posters() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Custom Poster Design & Print Services in India</title>
+  <meta
+    name="description"
+    content="Max-iDigital provides professional poster design and printing services across India from eye-catching event posters to social media print-ready layouts. Elevate your brand visibility with creative visuals that grab attention and deliver results."
+  />
+  <meta
+    name="keywords"
+    content="poster design India, print design services, custom posters, event poster design, social media posters, creative design, Max-iDigital, printing services, brand visibility"
+  />
+</Helmet>
       <img src={image} alt="" />
       <div className="w-[100%] bg-white" align="center">
         <div className="py-20 w-[90%]">

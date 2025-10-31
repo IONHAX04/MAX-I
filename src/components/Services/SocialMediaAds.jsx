@@ -2,6 +2,7 @@ import seo from "../../assets/servicess/SOCIALMEDIAAD.jpg";
 import service from "../../assets/common/service.jpg";
 import { useEffect, useState } from "react";
 import mobWork from "../../assets/mobile/SERVICE.jpg";
+import { Helmet } from "react-helmet";
 
 export default function SocialMediaAds() {
   const [deviceType, setDeviceType] = useState("lg");
@@ -30,6 +31,17 @@ export default function SocialMediaAds() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Social Media Advertising Services in India – Drive Engagement & Leads</title>
+  <meta
+    name="description"
+    content="Max-iDigital provides expert social media advertising services in India across Facebook, Instagram, LinkedIn, TikTok and YouTube. Boost brand awareness, engage your audience, generate leads and scale conversions with data-driven ad campaigns."
+  />
+  <meta
+    name="keywords"
+    content="social media advertising India, Facebook ads, Instagram ads, LinkedIn ads, TikTok ads, YouTube advertising, lead generation, brand awareness, social media marketing, Max-iDigital"
+  />
+</Helmet>
       <img src={deviceType === "sm" ? mobWork : service} alt="Header" />
       <div className="restaurantContents bg-white w-full md:w-10/12 mx-auto">
         <section className="flex lg:flex-row flex-col w-full md:h-screen px-8 py-12 items-center gap-10 max-w-6xl mx-auto">

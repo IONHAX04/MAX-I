@@ -14,6 +14,8 @@ import socialmediaads from "../../assets/servicess/SOCIALMEDIAAD.jpg";
 import web from "../../assets/servicess/WEB.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
+
 
 const worksData = [
   {
@@ -93,6 +95,18 @@ export default function Services() {
 
   return (
     <div className="sm:p-6 md:p-8 mt-[10vh] bg-white">
+  <Helmet>
+  <title>Max-iDigital | Content Marketing Services in India – Strategy & Creative Storytelling</title>
+  <meta
+    name="description"
+    content="Max-iDigital delivers expert content marketing services in India - including content strategy, blog & article writing, visual storytelling, and SEO-driven content. Elevate your brand voice, engage your audience and drive meaningful conversions."
+  />
+  <meta
+    name="keywords"
+    content="content marketing services India, content strategy, blog writing, article writing, visual storytelling, SEO content, brand voice, audience engagement, Max-iDigital"
+  />
+</Helmet>
+
       <div>
         <img src={deviceType === "sm" ? mobWork : workimg} alt="Header" />
       </div>

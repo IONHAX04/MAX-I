@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 
 import workimg from "../../assets/common/works.jpg";
 import mobImg from "../../assets/mobile/WORKS.jpg";
@@ -75,6 +76,17 @@ export default function Works() {
 
   return (
     <div className="sm:p-6 md:p-8 mt-[10vh] bg-white">
+      <Helmet>
+  <title>Max-iDigital | Our Work & Case Studies – Digital Marketing Success in India</title>
+  <meta
+    name="description"
+    content="Explore the work of Max-iDigital – India’s leading digital marketing agency. See real client case studies in SEO, PPC, social media, content & web development. Discover how we drive measurable growth and online success."
+  />
+  <meta
+    name="keywords"
+    content="digital marketing case studies India, Max-iDigital work, SEO case studies, PPC results, social media success, content marketing, web development projects, client success stories"
+  />
+</Helmet>
       <div>
         <img
           className="mt-20"

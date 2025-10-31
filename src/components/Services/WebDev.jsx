@@ -1,6 +1,7 @@
 import seo from "../../assets/servicess/WEB.jpg";
 import service from "../../assets/common/service.jpg";
 import mobWork from "../../assets/mobile/SERVICE.jpg";
+import { Helmet } from "react-helmet"
 
 import { useEffect, useState } from "react";
 
@@ -31,6 +32,17 @@ export default function WebDev() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Web Development Services in India – Responsive, Scalable Websites</title>
+  <meta
+    name="description"
+    content="Max-iDigital provides expert web development services in India, delivering responsive, fast & secure websites built for growth. From CMS to custom builds, we enhance user experience, performance and conversions for your brand."
+  />
+  <meta
+    name="keywords"
+    content="web development India, website design, responsive websites, scalable websites, CMS development, custom web development, web performance, Max-iDigital, website optimization"
+  />
+</Helmet>
       <img src={deviceType === "sm" ? mobWork : service} alt="Header" />
       <div className="restaurantContents bg-white w-full md:w-10/12 mx-auto">
         <section className="flex lg:flex-row flex-col w-full md:h-screen px-8 py-12 items-center gap-10 max-w-6xl mx-auto">

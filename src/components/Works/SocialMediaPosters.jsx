@@ -8,6 +8,7 @@ import img4 from "../../assets/works/social/img4.jpg";
 import img5 from "../../assets/works/social/img5.jpg";
 import img6 from "../../assets/works/social/img6.png";
 import img7 from "../../assets/works/social/img7.png";
+import { Helmet } from "react-helmet";
 
 export default function SocialMediaPosters() {
   const [modalImage, setModalImage] = useState(null); // State to store the selected image for the modal
@@ -68,6 +69,18 @@ export default function SocialMediaPosters() {
   return (
     <div>
       <img src={image} alt="" />
+      <Helmet>
+  <title>Max-iDigital | Social Media Poster Design Services in India – Craft & Share Engaging Visuals</title>
+  <meta
+    name="description"
+    content="Max-iDigital creates custom social media posters in India — eye-catching visuals, on-brand templates, and platform-ready formats for Instagram, Facebook, LinkedIn & more. Elevate your online presence and boost engagement with creative poster designs."
+  />
+  <meta
+    name="keywords"
+    content="social media poster design India, Instagram poster design, Facebook poster design, LinkedIn creatives, custom social media visuals, creative poster design, Max-iDigital, digital design services"
+  />
+</Helmet>
+
 
       <div className="w-[100%]" align="center">
         <div className="">

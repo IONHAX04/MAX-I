@@ -1,6 +1,7 @@
 import seo from "../../assets/servicess/SEM.jpg";
 import service from "../../assets/common/service.jpg";
 import mobWork from "../../assets/mobile/SERVICE.jpg";
+import { Helmet } from "react-helmet";
 
 import { useEffect, useState } from "react";
 
@@ -31,6 +32,17 @@ export default function SearchEngineMark() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Search Engine Marketing (SEM) Services in India – Drive Paid Traffic & Conversions</title>
+  <meta
+    name="description"
+    content="Max-iDigital delivers expert Search Engine Marketing services in India—covering PPC campaigns, Google Ads & Bing Ads setup, landing page optimisation, conversion tracking and analytics. Get targeted traffic, increase leads and boost ROI with our data-driven SEM strategies."
+  />
+  <meta
+    name="keywords"
+    content="Search Engine Marketing India, SEM services, PPC campaigns, Google Ads, Bing Ads, paid traffic, conversion tracking, landing page optimization, Max-iDigital, digital advertising"
+  />
+</Helmet>
       <img src={deviceType === "sm" ? mobWork : service} alt="Header" />
       <div className="restaurantContents bg-white w-full md:w-10/12 mx-auto">
         <section className="flex lg:flex-row flex-col w-full md:h-screen px-8 py-12 items-center gap-10 max-w-6xl mx-auto">

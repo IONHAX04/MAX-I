@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import Glide from "@glidejs/glide";
+import { Helmet } from "react-helmet";
+
 
 import { Suspense, lazy } from "react";
 import SmoothScroll from "../../pages/Projects/SmoothScroll/index";
@@ -55,6 +57,18 @@ export default function Home() {
 
   return (
     <SmoothScroll>
+    <Helmet>
+  <title>Max-iDigital | Full-Service Digital Marketing Agency in India</title>
+  <meta
+    name="description"
+    content="Max-iDigital is a full-service digital marketing agency in India offering strategic services like SEO, PPC, social media, content marketing & web design. Partner with us to accelerate your online growth and drive measurable business results."
+  />
+  <meta
+    name="keywords"
+    content="digital marketing agency India, SEO, PPC, social media marketing, content marketing, web design, Max-iDigital"
+  />
+</Helmet>
+
       <main className="main">
         <Suspense fallback={<img src={placeholder} alt="Loading..." />}>
           <Earth />

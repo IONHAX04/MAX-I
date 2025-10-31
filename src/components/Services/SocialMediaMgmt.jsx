@@ -1,7 +1,7 @@
 import seo from "../../assets/servicess/SOCIALMANAGEMENT.jpg";
 import service from "../../assets/common/service.jpg";
 import mobWork from "../../assets/mobile/SERVICE.jpg";
-
+import { Helmet } from "react-helmet"
 import { useEffect, useState } from "react";
 
 export default function SocialMediaMgmt() {
@@ -30,6 +30,17 @@ export default function SocialMediaMgmt() {
   }, []);
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Social Media Management Services in India – Build Your Brand & Engage</title>
+  <meta
+    name="description"
+    content="Max-iDigital offers professional social media management services in India - covering content creation, community engagement, analytics & reporting across Facebook, Instagram, LinkedIn and more. Elevate your brand’s voice, grow your audience and drive meaningful conversions."
+  />
+  <meta
+    name="keywords"
+    content="social media management India, content creation, community engagement, social media analytics, social media reporting, Facebook management, Instagram management, LinkedIn marketing, Max-iDigital"
+  />
+</Helmet>
       <img src={deviceType === "sm" ? mobWork : service} alt="Header" />
       <div className="restaurantContents bg-white w-full md:w-10/12 mx-auto">
         <section className="flex lg:flex-row flex-col w-full md:h-screen px-8 py-12 items-center gap-10 max-w-6xl mx-auto">

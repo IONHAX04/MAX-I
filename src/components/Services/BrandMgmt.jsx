@@ -1,6 +1,7 @@
 import seo from "../../assets/servicess/BRANDMANAGEMENT.jpg";
 import service from "../../assets/common/service.jpg";
 import mobWork from "../../assets/mobile/SERVICE.jpg";
+import { Helmet } from "react-helmet";
 
 import { useEffect, useState } from "react";
 
@@ -31,6 +32,17 @@ export default function BrandMgmt() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Brand Management Services in India – Build & Protect Your Brand</title>
+  <meta
+    name="description"
+    content="Max-iDigital offers expert brand management services in India - from brand strategy, positioning and identity development to reputation monitoring and brand growth. Strengthen your brand’s value, visibility and long-term success."
+  />
+  <meta
+    name="keywords"
+    content="brand management India, brand strategy, brand positioning, brand identity, reputation management, brand growth, brand visibility, Max-iDigital, branding services"
+  />
+</Helmet>
       <div>
         <img src={deviceType === "sm" ? mobWork : service} alt="Header" />
       </div>{" "}

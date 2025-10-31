@@ -2,6 +2,7 @@ import seo from "../../assets/servicess/CONTENTMARKETING.jpg";
 import service from "../../assets/common/service.jpg";
 import mobImg from "../../assets/mobile/SERVICE.jpg";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 export default function ContentMarketing() {
   const [deviceType, setDeviceType] = useState("lg");
@@ -30,6 +31,17 @@ export default function ContentMarketing() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Content Marketing Services in India – Strategy & Creative Storytelling</title>
+  <meta
+    name="description"
+    content="Max-iDigital delivers expert content marketing services in India - including content strategy, blog & article writing, visual storytelling, and SEO-driven content. Elevate your brand voice, engage your audience and drive meaningful conversions."
+  />
+  <meta
+    name="keywords"
+    content="content marketing services India, content strategy, blog writing, article writing, visual storytelling, SEO content, brand voice, audience engagement, Max-iDigital, digital marketing"
+  />
+</Helmet>
       <img src={deviceType === "sm" ? mobImg : service} alt="Header" />
       <div className="restaurantContents bg-white w-full md:w-10/12 mx-auto">
         <section className="flex lg:flex-row flex-col w-full md:h-screen px-8 py-12 items-center gap-10 max-w-6xl mx-auto">

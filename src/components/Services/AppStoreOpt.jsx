@@ -2,6 +2,7 @@ import seo from "../../assets/servicess/APP.jpg";
 import mobWork from "../../assets/mobile/SERVICE.jpg";
 
 import service from "../../assets/common/service.jpg";
+import { Helmet } from "react-helmet";
 import { useEffect, useState } from "react";
 
 export default function AppStoreOpt() {
@@ -31,6 +32,18 @@ export default function AppStoreOpt() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | App Store Optimization (ASO) Services in India – Boost App Visibility</title>
+  <meta
+    name="description"
+    content="Max-iDigital offers professional App Store Optimization services in India to enhance your app’s ranking, visibility, and downloads. Our ASO experts use keyword research, creative listings, and analytics to help your app stand out on Google Play & App Store."
+  />
+  <meta
+    name="keywords"
+    content="App Store Optimization India, ASO services, app visibility, app ranking, app downloads, Google Play optimization, App Store optimization, mobile marketing, Max-iDigital"
+  />
+</Helmet>
+
       <img
         className="mt-20"
         src={deviceType === "sm" ? mobWork : service}

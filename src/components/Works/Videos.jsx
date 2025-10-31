@@ -8,6 +8,7 @@ import img3 from "../../assets/works/video/Thumbnail/img3.png";
 import video1 from "../../assets/works/video/video1.mp4";
 import video2 from "../../assets/works/video/video2.mp4";
 import video3 from "../../assets/works/video/video3.mp4";
+import { Helmet } from "react-helmet";
 
 export default function Videos() {
   const [modalImage, setModalImage] = useState(null); // State to store the selected image for the modal
@@ -51,6 +52,17 @@ export default function Videos() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Brand Videos & Corporate Video Production in India</title>
+  <meta
+    name="description"
+    content="Looking for professional video production in India? Max-iDigital delivers branded video content, social media clips, and campaign videos to boost reach, conversions & brand recall."
+  />
+  <meta
+    name="keywords"
+    content="video production India, corporate videos, brand videos, social media video marketing, campaign videos, professional video services, Max-iDigital, branded content"
+  />
+</Helmet>
       <img src={image} alt="" />
       <div className="w-[100%]" align="center">
         <div className="py-10 bg-white">

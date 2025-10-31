@@ -6,6 +6,7 @@ import swiss from "../../assets/works/logo/swiss.png";
 import movenpack from "../../assets/works/logo/movenpack.png";
 import brandnew from "../../assets/works/logo/brandnewoutlet.png";
 import smarthandy from "../../assets/works/logo/smarthandy.png";
+import { Helmet } from "react-helmet";
 
 export default function Logo() {
   const [modalImage, setModalImage] = useState(null); // State to store the selected image for the modal
@@ -42,6 +43,17 @@ export default function Logo() {
 
   return (
     <div>
+      <Helmet>
+  <title>Max-iDigital | Custom Logo Design Services in India – Unique Brand Identities</title>
+  <meta
+    name="description"
+    content="Max-iDigital offers professional logo design services in India crafting custom, original logos that reflect your brand’s values and build recognition. Get vector files, social-ready versions, and full usage rights to elevate your brand identity."
+  />
+  <meta
+    name="keywords"
+    content="logo design India, custom logo design, professional logo services, brand identity design, creative logo design, vector logo, Max-iDigital, branding services, unique logo design"
+  />
+</Helmet>
       <img src={image} alt="" />
       <div className="w-[100%]" align="center">
         <div className="">
